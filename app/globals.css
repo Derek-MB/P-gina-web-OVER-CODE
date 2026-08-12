@@ -36,9 +36,11 @@
 }
 
 body {
+  min-width: 320px;
   background: var(--oc-background);
   color: var(--oc-text);
   font-family: var(--font-geist), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
   transition: background-color 200ms ease, color 200ms ease;
 }
 
@@ -52,3 +54,9 @@ main p[class~="uppercase"] {
   font-size: 0.625rem;
   line-height: 1.6;
 }
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+img, svg, video, canvas { max-width: 100%; }
