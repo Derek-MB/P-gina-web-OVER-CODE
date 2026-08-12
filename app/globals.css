@@ -1,55 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  /* Fondo azul-grafito, no negro puro: retiene el look "juego nocturno"
-     sin caer en el pozo oscuro que hacía difícil leer el texto. */
-  --oc-background: #131b2e;
-  --oc-surface: #1c2740;
-  --oc-surface-raised: #263252;
-  --oc-border: rgba(255, 255, 255, 0.12);
-  --oc-text: #f6f2ea;
-  --oc-muted: #b7c2da;
-  /* Naranja "misión" como color de acción: cálido y con alto contraste
-     sobre el azul, así los botones y CTAs destacan de verdad. */
-  --oc-primary: #ff7a45;
-  --oc-primary-hover: #ff5f22;
-  --oc-primary-text: #1a1206;
-  --oc-teal: #14b8a6;
-  --oc-accent: #5eead4;
-  --oc-accent-2: #ffd166;
-  --font-display: var(--font-chakra);
+  --oc-background: #02091a;
+  --oc-surface: #07162c;
+  --oc-surface-raised: #0b213d;
+  --oc-border: rgba(125, 241, 246, 0.16);
+  --oc-text: #eadccd;
+  --oc-muted: #9ab0c7;
+  --oc-primary: #325b91;
+  --oc-primary-hover: #3d6dac;
+  --oc-teal: #00696e;
+  --oc-accent: #7df1f6;
 }
 
 :root[data-theme="light"] {
-  --oc-background: #f8f4ec;
-  --oc-surface: #ffffff;
-  --oc-surface-raised: #fff7ea;
-  --oc-border: rgba(19, 27, 46, 0.12);
-  --oc-text: #131b2e;
-  --oc-muted: #55627e;
-  --oc-primary: #ff7a45;
-  --oc-primary-hover: #e85f2e;
-  --oc-primary-text: #1a1206;
-  --oc-teal: #0f9e8e;
-  --oc-accent: #0f9e8e;
-  --oc-accent-2: #b5750a;
+  --oc-background: #eadccd;
+  --oc-surface: #f8f0e7;
+  --oc-surface-raised: #ffffff;
+  --oc-border: rgba(2, 9, 26, 0.13);
+  --oc-text: #02091a;
+  --oc-muted: #496179;
+  --oc-primary: #325b91;
+  --oc-primary-hover: #254a7b;
+  --oc-teal: #00696e;
+  --oc-accent: #00696e;
 }
 
 @theme inline {
   --color-background: var(--oc-background);
   --color-foreground: var(--oc-text);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist), Arial, Helvetica, sans-serif;
+  --font-heading: var(--font-chakra-petch), Arial, Helvetica, sans-serif;
+  --font-pixel: var(--font-press-start-2p), monospace;
+  --font-mono: "Courier New", monospace;
 }
-
-/* --font-chakra y --font-pixel ya quedan disponibles como variables CSS
-   (las define next/font en el elemento <html>) y se usan directamente en
-   el markup con font-[family-name:var(--font-chakra)], sin pasar por
-   Tailwind, así que no hace falta duplicarlas aquí. */
 
 body {
   background: var(--oc-background);
   color: var(--oc-text);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist), Arial, Helvetica, sans-serif;
   transition: background-color 200ms ease, color 200ms ease;
+}
+
+h1,
+h2 {
+  font-family: var(--font-chakra-petch), Arial, Helvetica, sans-serif;
+}
+
+main p[class~="uppercase"] {
+  font-family: var(--font-press-start-2p), monospace;
+  font-size: 0.625rem;
+  line-height: 1.6;
 }

@@ -5,11 +5,11 @@ export type PlayerProfile = {
   current_level: number;
   highest_unlocked_level: number;
   experience: number;
+  coins: number;
   progress: number;
   play_time_seconds: number;
   games_played: number;
   attempts: number;
   correct_answers: number;
   wrong_answers: number;
-  coins: number;
 };
